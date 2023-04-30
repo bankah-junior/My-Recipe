@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title != 'undefined' ? title: 'Cooking Blog' %></title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <div class="container px-md-5 bg-white shadow-lg">
+        <!-- Navigation -->
+        <div class="hero-image w-full ">
+            <div class="hero-content">
+                <!-- Menu -->
+                <div class="menu flex justify-between items-center px-4">
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu md:hidden py-4">
+                        <div id="mySidenav" class="sidenav h-full w-0 fixed top-0 left-0">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="social-media-icons flex items-center">
+                                    <a href="https://www.linkedin.com/in/anthony-bekoe-bankah-080448240" class="px-4 mx-2">
+                                        <img src="/icons/linkedin.png" alt="linkedin" title="LinkedIn" class="w-6 h-6">
+                                    </a>
+                                    <a href="https://github.com/bankah-junior" class="px-4 mx-2">
+                                        <img src="/icons/github.png" alt="github" title="GitHub" class="w-6 h-6">
+                                    </a>
+                                    <a href="https://www.instagram.com/@iam.bankah" class="px-4 mx-2">
+                                        <img src="/icons/instagram-original.png" alt="instagram" title="Instagram" class="w-6 h-6">
+                                    </a>
+                                    <a href="https://twitter.com/iam_bankah?t=UFouGnCo6AL1bxU_MMVRg&s=09" class="px-4 mx-2">
+                                        <img src="/icons/twitter-filled.png" alt="twitter" title="Twitter" class="w-6 h-6">
+                                    </a>
+                                    <a href="https://www.youtube.com/@welearn2" class="px-4 mx-2">
+                                        <img src="/icons/youtube.png" alt="youtube" title="YouTube" class="w-6 h-6">
+                                    </a>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <span class="closebtn text-4xl cursor-pointer mx-2 px-4 font-bold text-red-500" id="closeMenu">&times;</span>
+                                </div>
+                            </div>
+                            <div class="mx-2 px-4 my-4">
+                                <form method="POST" action="/search">
+                                    <input type="search" name="searchTerm" id="searchTerm" class="p-2 rounded-lg w-full" placeholder="Search..." aria-label="Search">
+                                </form>
+                            </div>
+                            <div class="side-nav-list text-white flex flex-col">
+                                <a href="/" class="mx-2 px-4 my-4">Home</a>
+                                <a href="/about" class="mx-2 px-4 my-4">About</a>
+                                <a href="/submit-recipe" class="mx-2 px-4 my-4">Submit</a>
+                                <a href="/contact" class="mx-2 px-4 my-4">Contact</a>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-semibold text-white cursor-pointer" id="openMenu">&#9776;</span>
+                    </div>
+                    <!-- End of Mobile Menu -->
+                    <a href="/">
+                        <h1 class="text-3xl font-bold text-white">My Recipe</h1>
+                    </a>
+                    <!-- Large Menu -->
+                    <div class="large-menu hidden md:block">
+                        <div class="lists text-white flex items-center">
+                            <a href="/" class="mx-2 px-4 my-4 main-link">Home</a>
+                            <a href="/about" class="mx-2 px-4 my-4 main-link">About</a>
+                            <a href="/submit-recipe" class="mx-2 px-4 my-4 main-link">Submit</a>
+                            <a href="/contact" class="mx-2 px-4 my-4 main-link">Contact</a>
+
+                            <div class="mx-2 px-4 my-4">
+                                <form method="POST" action="/search">
+                                    <input type="search" name="searchTerm" id="searchTerm" class="p-2 rounded-lg" placeholder="Search..." aria-label="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Large Menu -->
+                </div>
+                <!-- End of Menu -->
+            </div>
+        </div>
+        <!-- End of Navigation -->
+
+        <main class="mx-2 md:mx-8 text-xl">
+            <%- body -%>
+        </main>
+
+        <footer class="py-6">
+            <center>
+                <p>BankiDes built this</p>
+            </center>
+        </footer>
+
+    </div>
+
+
+    
+    <script src="/js/index.js"></script>
+    <script src="/js/contact.js"></script>
+</body>
+</html>

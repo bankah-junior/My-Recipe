@@ -1,0 +1,16 @@
+<h1 class="pb-4 mt-4 text-4xl font-semibold">Explore Random</h1>
+
+<div class="w-full md:w-100-70 gen">
+  <% if(recipe != '') { %>
+   
+    <a href="/recipe/<%= recipe._id %>" class="">
+      <div class="">
+        <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="rounded-lg">
+      </div>
+      <div class="pt-2 text-center"><%= recipe.name %></div>
+    </a>
+  
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %> 
+</div>

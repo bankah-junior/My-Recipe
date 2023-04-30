@@ -1,0 +1,189 @@
+<div class="flex pt-2" style="height: 20em; object-fit: contain;">
+  <img src="/img/left-hero-image.jpg" class="w-100-50 fadeInLeft" alt="Cooking With BankiDes">
+  <img src="/img/right-hero-image.jpg" class="w-100-50 fadeInRight" alt="Cooking With BankiDes">
+</div>
+
+<div class="row md:flex flex-row items-center py-4 mb-4">
+  
+  <div class="md:w-100-40">
+    <h1 class="text-4xl font-bold my-4">"Explore the Flavors of the World with My Recipe"</h1>
+    <p class="font-semibold">
+      My Recipe is a recipe website featuring delicious dishes from around the world. Explore our diverse collection of recipes and cooking tips to bring international flavors to your kitchen.
+    </p>
+    
+    <div class="grid gap-2 md:flex items-start mt-4">
+      <a href="/explore-latest" class="py-2 px-4 bg-blue-600 text-center rounded-lg font-bold">Explore Latest</a>
+      <a href="/explore-random" class="py-2 px-4 bg-red-600 text-center rounded-lg font-bold">Show Random</a>
+    </div>
+    
+  </div>
+
+  <div class="md:w-100-60 mt-4">
+    <img src="/img/hero-image.png" width="607" height="510" class="" alt="Cooking With BankiDes">
+  </div>
+  
+</div>
+  
+  
+  <!-- Categories Start -->
+  
+  
+  <div class="py-4 galleryGrid">
+  
+    <% if(categories != '') { %>
+      <% categories.forEach(function(category, index) { %>
+        <a href="/categories/<%- category.name %>" class="col text-center">
+          <div class="category__img shadow-lg">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>" class="rounded-lg">
+          </div>
+          <div class="pt-1"><%- category.name %></div>
+        </a>
+      <% }) %>
+    <% } %>
+  
+    <a href="/categories" class="col text-center">
+      <div class="category__img shadow-lg">
+        <img src="img/view-all.jpg" alt="View All Categories" class="rounded-lg">
+      </div>
+      <div class="pt-1">View All</div>
+    </a>
+  
+  </div>
+  <!-- Categories End -->
+  
+  
+  
+  <!-- Latest Start -->
+  <section class="pt-4" style="clear: both;">
+    <div class="flex justify-between items-center">
+      <h2 class="text-4xl font-semibold">Latest Recipes</h2>
+      <a href="/explore-latest" class="vMore"><u>View More</u></a>
+    </div>
+  
+    <div class="galleryGrid">
+      <% if(food != '') { %>
+        <% food.latest.forEach(function(recipe, index){ %>
+          <a href="/recipe/<%= recipe._id %>" class="col text-center">
+            <div class=" shadow-lg">
+              <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="w-full rounded-lg">
+            </div>
+            <div class="pt-1 desc"><%= recipe.name %></div>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  
+  </section>
+  <!-- Latest End -->
+  
+  <!-- Ghanaian Start -->
+  <section class="pt-4" style="clear: both;">
+    <div class="flex justify-between items-center">
+      <h2 class="text-4xl font-semibold">Ghanaian Recipes</h2>
+      <a href="/categories/Ghanaian" class="vMore"><u>View More</u></a>
+    </div>
+  
+    <div class="galleryGrid">
+      <% if(typeof food.thai !== 'undefined' && food.thai.length > 0) { %>
+        <% food.ghanaian.forEach(function(recipe, index){ %>
+        <a href="/recipe/<%= recipe._id %>" class="col text-center">
+          <div class=" shadow-lg">
+            <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="rounded-lg">
+          </div>
+          <div class="pt-1"><%= recipe.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Ghanaian End -->
+  
+  <!-- Thai Start -->
+  <section class="pt-4" style="clear: both;">
+    <div class="flex justify-between items-center">
+      <h2 class="text-4xl font-semibold">Thai Recipes</h2>
+      <a href="/categories/Thai" class="vMore"><u>View More</u></a>
+    </div>
+  
+    <div class="galleryGrid">
+      <% if(typeof food.thai !== 'undefined' && food.thai.length > 0) { %>
+        <% food.thai.forEach(function(recipe, index){ %>
+        <a href="/recipe/<%= recipe._id %>" class="col text-center">
+          <div class=" shadow-lg">
+            <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="rounded-lg">
+          </div>
+          <div class="pt-1"><%= recipe.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Thai End -->
+  
+  <!-- American Start -->
+  <section class="pt-4" style="clear: both;">
+    <div class="flex justify-between items-center">
+      <h2 class="text-4xl font-semibold">American Recipes</h2>
+      <a href="/categories/American" class="vMore"><u>View More</u></a>
+    </div>
+  
+    <div class="galleryGrid">
+      <% if(food.american != '') { %>
+        <% food.american.forEach(function(recipe, index){ %>
+        <a href="/recipe/<%= recipe._id %>" class="col text-center">
+          <div class=" shadow-lg">
+            <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="rounded-lg">
+          </div>
+          <div class="pt-1"><%= recipe.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- American End -->
+  
+  <!-- Chinese Recipes -->
+  <section class="pt-4" style="clear: both;">
+    <div class="flex justify-between items-center">
+      <h2 class="text-4xl font-semibold">Chinese Recipes</h2>
+      <a href="/categories/Chinese" class="vMore"><u>View More</u></a>
+    </div>
+  
+    <div class="galleryGrid">
+      <% if(food.chinese != '') { %>
+        <% food.chinese.forEach(function(recipe, index){ %>
+        <a href="/recipe/<%= recipe._id %>" class="col text-center">
+          <div class=" shadow-lg">
+            <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" class="rounded-lg">
+          </div>
+          <div class="pt-1"><%= recipe.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Chinese End -->
+  
+  <!-- Submit - Start -->
+  <section class="px-4 py-5 my-5 text-center">
+    <img src="/img/publish-recipe.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish your recipe for FREE today</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Publish your Recipe in front of thousands of people for free.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/submit-recipe" class="py-2 px-4 bg-blue-600 text-center rounded-lg font-bold">Submit Recipe</a>
+      </div>
+    </div>
+  </section>
+   
+  <!-- Submit - End -->

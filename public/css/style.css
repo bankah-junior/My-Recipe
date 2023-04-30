@@ -1,0 +1,143 @@
+/* NAVIGATION BAR */
+.hero-image {
+  background-color: #222222;
+  z-index: 99;
+}
+.hero-image .hero-content .menu .sidenav {
+  z-index: 1;
+  background-color: #366175;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.hero-image .hero-content .menu .sidenav .social-media-icons img {
+  filter: invert(100%);
+}
+.hero-image .hero-content .menu .sidenav .side-nav-list {
+  font-size: 20px;
+  display: block;
+  transition: 0.3s;
+}
+.hero-image .hero-content .menu .sidenav .side-nav-list a:hover {
+  color: #73c7e3;
+  transition: all 500ms;
+}
+.hero-image .hero-content .menu .open-btn {
+  opacity: 0;
+  transition: 0.5s;
+}
+.hero-image .hero-content .large-menu .lists .main-link {
+  transition: 0.3s;
+}
+.hero-image .hero-content .large-menu .lists .main-link:hover {
+  background-color: #fff;
+  color: #222222;
+  transition: all 500ms;
+  border-radius: 8px;
+}
+/* END OF NAVIGATION BAR */
+
+/* INDEX PAGE */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 4s;
+}
+
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 4s;
+}
+
+.galleryGrid {
+  width: 100%;
+  margin: 5px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.galleryGrid {
+  transition: 250ms all;
+}
+
+.galleryGrid a:hover,
+.gen a:hover {
+  transform: scale(1.1);
+  color: aqua;
+}
+
+.galleryGrid img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.vMore,
+.gen {
+  transition: 250ms all;
+}
+
+.vMore:hover {
+  color: aqua;
+}
+
+input[type=text], input[type=email],input[type=file], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=search] {
+  color: #222222 !important;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.containerForm {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+/* END OF INDEX PAGE */

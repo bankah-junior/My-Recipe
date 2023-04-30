@@ -1,0 +1,68 @@
+<div class="p-5 my-12 flex flex-col justify-center items-center text-center">
+  <h1 class="text-5xl font-bold">Submit Your Recipe</h1>
+  <div class="md:w-100-60 mx-16">
+    <p class="lead">Share your amazing recipies with thousands of web developers accross the world. Fill our form to get started.</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+
+  <% if(infoSubmitObj != '') { %>
+    <div class="col-8 alert alert-success" role="alert">
+      <%= infoSubmitObj %>
+    </div>
+  <% } %>
+
+  <% if(infoErrorsObj != '') { %>
+    <div class="col-8 alert alert-danger" role="alert">
+      <%= infoErrorsObj[0].message %>
+    </div>
+  <% } %>
+
+  <h3>FILL AND SUBMIT RECIPE</h3>
+
+<div class="containerForm">
+  <form action="/submit-recipe" enctype="multipart/form-data" method="POST">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email..">
+
+    <label for="name">Recipe name</label>
+    <input type="text" id="name" name="name" placeholder="Your recipe name..">
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" placeholder="Write the description.." style="height:200px"></textarea>
+
+    <div class="col-12">
+      <label for="name">Ingredients</label><br>
+      <small>Example: Ice</small>
+      <div class="ingredientList">
+        <div class="ingredeintDiv mb-2">
+          <input type="text" name="ingredients" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="button" class="py-2 px-4 bg-blue-600 text-center rounded-lg font-bold" id="addIngredientsBtn">+ Ingredient</button>
+    </div>
+
+    <label for="country">Country</label>
+    <select id="country" name="category">
+      <option selected>Select Category</option>
+      <option value="Ghanaian">Ghanaian</option>
+      <option value="Thai">Thai</option>
+      <option value="American">American</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Mexican">Mexican</option>
+      <option value="Indian">Indian</option>
+    </select>
+
+    <div class="col-12">
+      <label for="image">Product Image</label>
+      <input type="file" class="form-control" name="image" accept="image/*">
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
